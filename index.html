@@ -17,6 +17,10 @@
                     },
                     colors: {
                         brandRed: '#D71212',
+                        cardBgPink: '#FFF5F5',
+                    },
+                    backgroundImage: {
+                        'cardBg': 'linear-gradient(180deg, #F1F2F4 0%, #8C8D8E 100%)',
                     }
                 }
             }
@@ -83,9 +87,9 @@
     </header>
 
   <!-- --------hero section-------- -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex flex-col-reverse lg:flex-row items-center gap-12">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex flex-col-reverse lg:flex-row items-start gap-12">
         
-        <div class="w-full lg:w-2/3 space-y-6">
+        <div class="w-full mt-12 lg:w-2/3 space-y-6">
             
             <div class="inline-flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 shadow-sm">
                 <img src="images/devicon_google.svg" alt="Google" class="w-[25.79px] h-[25.79px]">
@@ -119,38 +123,130 @@
             </div>
         </div>
 
-        <div class="w-full lg:w-1/2 relative flex justify-center items-center">
+        <div class="w-full lg:w-1/2  relative flex justify-center items-center mt-8 lg:mt-20">
             
-            <div class="absolute bg-brandRed rounded-full w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px] -z-10 translate-y-10"></div>
+            <div class="absolute  rounded-full w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[480px] lg:h-[480px] -z-10 translate-y-10"></div>
             
-            <div class="absolute top-0 right-10 text-red-300 hidden lg:block">
+            <!-- <div class="absolute top-0 right-10 text-red-300 hidden lg:block">
                 <svg width="60" height="60" viewBox="0 0 100 100" fill="none">
                    <path d="M10 90 Q 50 10 90 10" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
                    <polygon points="90,5 95,15 85,15" fill="#ff8080" />
                 </svg>
-            </div>
+            </div> -->
 
-            <img src="images/labour.png" 
+            <img src="images/Hero-Image.png" 
                  alt="Construction Worker" 
                  class="relative z-0 h-[400px] sm:h-[500px] lg:h-[600px] object-cover">
-                 <div class="absolute bottom-10 left-4 sm:left-10 bg-white p-4 rounded-xl shadow-xl z-10 max-w-[220px]">
-                <!-- <ul class="space-y-3">
+                 <div class="absolute bottom-[8.5rem] left-[-1rem] sm:left-[-2.5rem] bg-white p-4 rounded-xl shadow-xl z-10 max-w-[260px]">
+                <ul class="space-y-3">
                     <li class="flex items-center gap-3">
-                        <div class="text-red-500 bg-red-50 p-1.5 rounded-full"><i class="fa-solid fa-user-group text-xs"></i></div>
-                        <span class="text-sm font-semibold text-gray-700">8k+ <span class="text-gray-500 font-normal text-xs">Employers Insured</span></span>
+                        <div class="text-red-500 bg-red-50 p-1.5 rounded-full"><img src="images/users.svg" alt="user"></div>
+                        <span class="font-roboto font-medium text-[18px] leading-none tracking-[-0.02em] text-black">8k+ <span class="font-roboto font-normal text-[16px] leading-none tracking-[-0.01em] text-[#6A6465]">Employers Insured</span></span>
                     </li>
                     <li class="flex items-center gap-3">
-                        <div class="text-red-500 bg-red-50 p-1.5 rounded-full"><i class="fa-solid fa-helmet-safety text-xs"></i></div>
-                        <span class="text-sm font-semibold text-gray-700">100k+ <span class="text-gray-500 font-normal text-xs">Workers protected</span></span>
+                        <div class="text-red-500 bg-red-50 p-1.5 rounded-full"><img src="images/fi_1962544.svg" alt="helmet"></div>
+                        <span class="font-roboto font-medium text-[18px] leading-none tracking-[-0.02em] text-black">100k+ <span class="font-roboto font-normal text-[16px] leading-none tracking-[-0.01em] text-[#6A6465]">Workers protected</span></span>
                     </li>
                     <li class="flex items-center gap-3">
-                        <div class="text-red-500 bg-red-50 p-1.5 rounded-full"><i class="fa-regular fa-message text-xs"></i></div>
-                        <span class="text-sm font-semibold text-gray-700">99% <span class="text-gray-500 font-normal text-xs">Top Satisfaction</span></span>
+                        <div class="text-red-500 bg-red-50 p-1.5 rounded-full"><img src="images/Review.svg" alt=""></div>
+                        <span class="font-roboto font-medium text-[18px] leading-none tracking-[-0.02em] text-black">99% <span class="font-roboto font-normal text-[16px] leading-none tracking-[-0.01em] text-[#6A6465]">Top Satisfaction</span></span>
                     </li>
-                </ul> -->
+                </ul>
             </div>
             
         </div>
     </section>
+<!-- ----------purchess step----------- -->
+ <section class="max-w-6xl mx-auto px-4 py-16">
+        
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-16">
+            Only 3 steps to purchase
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
+            
+            <div class="flex flex-col items-center">
+                <div class="relative w-full bg-cardBg rounded-2xl p-6 pt-10 h-64 flex items-center justify-center">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md border-4 border-white">
+                        1
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3 w-full max-w-[200px]">
+                        <div class="bg-white rounded-lg p-3 flex items-center justify-center shadow-sm h-16">
+                            <i class="fa-solid fa-water text-blue-500 text-2xl"></i>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 flex items-center justify-center shadow-sm h-16">
+                            <i class="fa-solid fa-lion text-red-700 text-2xl"></i>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 flex items-center justify-center shadow-sm h-16">
+                            <i class="fa-solid fa-shield-halved text-red-500 text-2xl"></i>
+                        </div>
+                        <div class="bg-white rounded-lg p-3 flex items-center justify-center shadow-sm h-16">
+                            <span class="text-xs font-bold text-gray-600">RHB Ins.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-6">
+                    <h3 class="text-xl font-bold text-gray-900">Select Insurer</h3>
+                    <p class="text-gray-500 mt-2 text-sm">Choose your preferred insurer.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <div class="relative w-full bg-cardBg rounded-2xl p-6 pt-10 h-64 flex flex-col items-center justify-center space-y-3">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md border-4 border-white">
+                        2
+                    </div>
+
+                    <div class="w-full max-w-[220px] space-y-2">
+                        <div class="text-[10px] font-semibold text-gray-500 text-center">FWCMS ITR Number(FWHS/SPIKPA)<span class="text-red-500">*</span></div>
+                        <div class="bg-white rounded-full h-8 w-full shadow-sm flex items-center justify-center text-xs text-gray-300">PHS25XXXXXXXXXXXXXX</div>
+                        
+                        <div class="text-[10px] font-semibold text-gray-500 text-center mt-1">SSM Business Reg. No.<span class="text-red-500">*</span></div>
+                        <div class="bg-white rounded-full h-8 w-full shadow-sm flex items-center justify-center text-xs text-gray-300">123456-W</div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6">
+                    <h3 class="text-xl font-bold text-gray-900">Key in ITR No.</h3>
+                    <p class="text-gray-500 mt-2 text-sm">All data will be auto-populated.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <div class="relative w-full bg-cardBg rounded-2xl p-6 pt-10 h-64 flex flex-col items-center justify-center space-y-4">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md border-4 border-white">
+                        3
+                    </div>
+
+                    <div class="w-full max-w-[220px] space-y-3">
+                        <div class="bg-white rounded-xl p-2 shadow-sm flex items-center justify-center gap-2">
+                            <span class="font-bold text-blue-900 italic text-lg">FPX</span>
+                            <span class="text-[10px] text-gray-400 border-l pl-2">Personal & Corporate</span>
+                        </div>
+                        <div class="bg-white rounded-xl p-2 shadow-sm flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-cc-visa text-blue-600 text-2xl"></i>
+                            <i class="fa-brands fa-cc-mastercard text-red-500 text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6">
+                    <h3 class="text-xl font-bold text-gray-900">Make Payment</h3>
+                    <p class="text-gray-500 mt-2 text-sm">After payment, auto update FWCMS.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex justify-center mt-12">
+            <a href="#" class="bg-brandRed hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center gap-2 shadow-lg shadow-red-200">
+                Watch quick demo <i class="fa-solid fa-arrow-right -rotate-45 text-sm"></i>
+            </a>
+        </div>
+
+    </section>
+
 </body>
 </html>
