@@ -20,7 +20,7 @@
                         cardBgPink: '#FFF5F5',
                     },
                     backgroundImage: {
-                        'cardBg': 'linear-gradient(180deg, #F1F2F4 0%, #8C8D8E 100%)',
+                        'cardBg': 'linear-gradient(180deg, #F1F2F4 0%, #FFF5F5 100%)',
                     }
                 }
             }
@@ -87,7 +87,7 @@
     </header>
 
   <!-- --------hero section-------- -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 flex flex-col-reverse lg:flex-row items-start gap-12">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:pb-10 lg:pt-20 flex flex-col-reverse lg:flex-row items-start gap-12">
         
         <div class="w-full mt-12 lg:w-2/3 space-y-6">
             
@@ -157,96 +157,107 @@
         </div>
     </section>
 <!-- ----------purchess step----------- -->
- <section class="max-w-6xl mx-auto px-4 py-16">
+ <section class="max-w-7xl mx-auto px-4 py-20">
         
-        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-16">
+        <h2 class="font-montserrat font-bold text-[48px] leading-[59px] tracking-[-0.02em] text-center text-black mb-16">
             Only 3 steps to purchase
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8 relative">
             
             <div class="flex flex-col items-center">
                 <div class="relative w-full bg-cardBg rounded-2xl p-6 pt-10 h-64 flex items-center justify-center">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md border-4 border-white">
+                    <div class="absolute -top-6 left-1/2 font-montserrat transform -translate-x-1/2 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md border-4 border-white">
                         1
                     </div>
                     
-                    <div class="grid grid-cols-2 gap-3 w-full max-w-[200px]">
-                        <div class="bg-white rounded-lg p-3 flex items-center justify-center shadow-sm h-16">
-                            <i class="fa-solid fa-water text-blue-500 text-2xl"></i>
+                    <div class="grid grid-cols-2 gap-3 w-full max-w-[250px]">
+                        <div class="bg-white rounded-[16px] w-[116px] p-3 flex items-center justify-center shadow-sm h-16">
+                            <img src="images/tokio.svg" alt="tokio" class="h-[106.65px] w-[106.65px] object-contain">
                         </div>
-                        <div class="bg-white rounded-lg p-3 flex items-center justify-center shadow-sm h-16">
-                            <i class="fa-solid fa-lion text-red-700 text-2xl"></i>
+                        <div class="bg-white rounded-[16px] w-[116px] p-3 flex items-center justify-center shadow-sm h-16">
+                            <img src="images/genaral.svg" alt="genaral" class="h-[106.65px] w-[106.65px] object-contain">
                         </div>
-                        <div class="bg-white rounded-lg p-3 flex items-center justify-center shadow-sm h-16">
-                            <i class="fa-solid fa-shield-halved text-red-500 text-2xl"></i>
+                        <div class="bg-white rounded-[16px] w-[116px] p-3 flex items-center justify-center shadow-sm h-16">
+                            <img src="images/onpack.svg" alt="onpack" class="h-[106.65px] w-[106.65px] object-contain">
                         </div>
-                        <div class="bg-white rounded-lg p-3 flex items-center justify-center shadow-sm h-16">
-                            <span class="text-xs font-bold text-gray-600">RHB Ins.</span>
+                        <div class="bg-white rounded-[16px] w-[116px] p-3 flex items-center justify-center shadow-sm h-16">
+                           <img src="images/RHB.svg" alt="RHB" class="h-[106.65px] w-[106.65px] object-contain">
                         </div>
                     </div>
                 </div>
                 
                 <div class="text-center mt-6">
-                    <h3 class="text-xl font-bold text-gray-900">Select Insurer</h3>
-                    <p class="text-gray-500 mt-2 text-sm">Choose your preferred insurer.</p>
+                    <h3 class="text-[30px] font-bold text-[#000000E5] font-montserrat">Select Insurer</h3>
+                    <p class="text-[#595959] mt-1 text-[20px] font-roboto">Choose your preferred insurer.</p>
                 </div>
             </div>
 
             <div class="flex flex-col items-center">
                 <div class="relative w-full bg-cardBg rounded-2xl p-6 pt-10 h-64 flex flex-col items-center justify-center space-y-3">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md border-4 border-white">
+                    <div class="absolute -top-6 left-1/2 font-montserrat transform -translate-x-1/2 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md border-4 border-white">
                         2
                     </div>
 
                     <div class="w-full max-w-[220px] space-y-2">
-                        <div class="text-[10px] font-semibold text-gray-500 text-center">FWCMS ITR Number(FWHS/SPIKPA)<span class="text-red-500">*</span></div>
-                        <div class="bg-white rounded-full h-8 w-full shadow-sm flex items-center justify-center text-xs text-gray-300">PHS25XXXXXXXXXXXXXX</div>
-                        
-                        <div class="text-[10px] font-semibold text-gray-500 text-center mt-1">SSM Business Reg. No.<span class="text-red-500">*</span></div>
-                        <div class="bg-white rounded-full h-8 w-full shadow-sm flex items-center justify-center text-xs text-gray-300">123456-W</div>
+                        <div class="text-[10px] font-semibold text-black font-montserrat text-center">FWCMS ITR Number(FWHS/SPIKPA)<span class="text-red-500 text-[10px] font-semibold text-black font-montserrat text-center">*</span></div>
+                        <input type="text" class="bg-white text-center rounded-full h-[37px] w-full shadow-sm flex items-center justify-center text-[12.6px] font-roboto text-[#BAA6A6]" placeholder="PHS25XXXXXXXXXXXXXX">
+                       
+                         <div class="text-[10px] font-semibold text-black font-montserrat text-center">FWCMS ITR Number(FWIG)*<span class="text-red-500 text-[10px] font-semibold text-black font-montserrat text-center">*</span></div>
+                        <input type="text" class="bg-white text-center rounded-full h-[37px] w-full shadow-sm flex items-center justify-center text-[12.6px] font-roboto text-[#BAA6A6]" placeholder="PHS25XXXXXXXXXXXXXX">
+                        <div class="text-[10px] font-semibold text-black font-montserrat text-center">SSM Business Reg. No.<span class="text-[10px] font-semibold text-black font-montserrat text-center text-red-500">*</span></div>
+                        <input type="text" class="bg-white text-center rounded-full h-[37px] w-full shadow-sm flex items-center justify-center text-[12.6px] font-roboto text-[#BAA6A6]" placeholder="123456-W">
+                      
                     </div>
                 </div>
 
                 <div class="text-center mt-6">
-                    <h3 class="text-xl font-bold text-gray-900">Key in ITR No.</h3>
-                    <p class="text-gray-500 mt-2 text-sm">All data will be auto-populated.</p>
+                    <h3 class="text-[30px] font-bold text-[#000000E5] font-montserrat">Key in ITR No.</h3>
+                    <p class="text-[#595959] mt-1 text-[20px] font-roboto">All data will be auto-populated.</p>
                 </div>
             </div>
 
             <div class="flex flex-col items-center">
                 <div class="relative w-full bg-cardBg rounded-2xl p-6 pt-10 h-64 flex flex-col items-center justify-center space-y-4">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md border-4 border-white">
+                    <div class="absolute -top-6 left-1/2 font-montserrat transform -translate-x-1/2 w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-md border-4 border-white">
                         3
                     </div>
 
-                    <div class="w-full max-w-[220px] space-y-3">
-                        <div class="bg-white rounded-xl p-2 shadow-sm flex items-center justify-center gap-2">
-                            <span class="font-bold text-blue-900 italic text-lg">FPX</span>
-                            <span class="text-[10px] text-gray-400 border-l pl-2">Personal & Corporate</span>
+                    <div class="w-full max-w-[270px] space-y-3">
+                        <div class="bg-white rounded-[20px] p-2 px-3 shadow-sm flex items-center justify-between gap-2">
+                            <img src="images/FPXPersonal.svg" class="w-[120px] h-[47px]" alt="">
+                            <img src="images/FPXCorporatelogo.svg" class="w-[120px] h-[47px]" alt="">
                         </div>
-                        <div class="bg-white rounded-xl p-2 shadow-sm flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-cc-visa text-blue-600 text-2xl"></i>
-                            <i class="fa-brands fa-cc-mastercard text-red-500 text-2xl"></i>
+                       <div class="bg-white rounded-[20px] p-2 px-3 shadow-sm flex items-center justify-center gap-2">
+                            <img src="images/Visamastercardoption1.svg" class="w-[120px] h-[47px]" alt="">
+                            
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center mt-6">
-                    <h3 class="text-xl font-bold text-gray-900">Make Payment</h3>
-                    <p class="text-gray-500 mt-2 text-sm">After payment, auto update FWCMS.</p>
+                    <h3 class="text-[30px] font-bold text-[#000000E5] font-montserrat">Make Payment</h3>
+                    <p class="text-[#595959] mt-1 text-[20px] font-roboto">After payment, auto update FWCMS.</p>
                 </div>
             </div>
 
         </div>
 
         <div class="flex justify-center mt-12">
-            <a href="#" class="bg-brandRed hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center gap-2 shadow-lg shadow-red-200">
-                Watch quick demo <i class="fa-solid fa-arrow-right -rotate-45 text-sm"></i>
+            <a href="#" class="bg-brandRed hover:bg-red-700 text-white font-montserrat font-bold py-3 px-8 rounded-full transition duration-300 flex items-center gap-2 shadow-lg shadow-red-200">
+                Watch quick demo <img src="images/link.svg" alt="link icon" class="w-[30.78px] h-[30.78px]">
             </a>
         </div>
 
     </section>
-
+<!-- -----------purcehess proced------ -->
+  <div class="container-fluid  bg-[#F5F5F5]">
+    <section class="max-w-7xl mx-auto px-4 py-20">
+     <h2 class="font-montserrat font-bold text-[48px] leading-[59px] tracking-[-0.02em] text-center text-black mb-16">
+           Please <span class="text-brandRed underline">select</span> your preferred Insurer <br>
+to proceed purchase
+        </h2>
+  </section>
+  </div>
 </body>
 </html>
