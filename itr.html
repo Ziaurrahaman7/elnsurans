@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elnsurans Design</title>
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        brandRed: '#D71212',
+                        cardBgPink: '#FFF5F5',
+                    },
+                    backgroundImage: {
+                        'cardBg': 'linear-gradient(180deg, #F1F2F4 0%, #FFF5F5 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <header class="bg-white font-roboto fixed top-0 left-0 right-0 z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <img class="w-[248px] h-[39.82px]" src="images/logo.svg" alt="logo">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Home</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Why Us</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Claims</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">FAQ</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Tutorial</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Quick Quote</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <button class="w-[170px] h-[50px] bg-[#34B658] text-white rounded-[30px] px-[10px] py-[6px] flex items-center justify-center gap-2 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] hover:bg-[#2ea04d] transition duration-300">
+                       <img class="w-[24.17px] h-[24.17px]" src="images/whatsapp.svg" alt="whatsapp.svg">
+                       <span class="font-roboto font-bold text-[16px] leading-none tracking-normal">WhatsApp Us</span>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="open = !open" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg x-show="!open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg x-show="open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div x-show="open" x-transition class="md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Home</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Why Us</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Claims</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">FAQ</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Tutorial</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Quick Quote</a>
+                    <button class="w-[170px] h-[50px] bg-[#34B658] text-white rounded-[30px] px-[10px] py-[6px] flex items-center justify-center gap-2 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] hover:bg-[#2ea04d] transition duration-300">
+                       <img class="w-[24.17px] h-[24.17px]" src="images/whatsapp.svg" alt="whatsapp.svg">
+                       <span class="font-roboto font-bold text-[16px] leading-none tracking-normal">WhatsApp Us</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+<section class="pt-[100px]">
+
+</section>
+<section class="px-4">
+     <div class="max-w-7xl mx-auto px-4 py-20">
+        <h1 class="text-[32px] font-bold text-black font-montserrat mb-6">Foreign Worker Insurance Purchase</h1>
+
+        <div class="bg-[#f8f9f9] rounded-2xl p-8 flex flex-wrap items-center justify-between border border-gray-100 relative shadow-sm">
+            
+            <div class="flex flex-wrap gap-12 items-center">
+                <div class="space-y-3">
+                    <p class="text-[#666666] text-[20px] font-roboto">Underwritten by :</p>
+                    <div class="h-16 flex items-center">
+                        <img src="images/tokio.svg" alt="Tokio Marine" class="h-[146px] h-[80px] object-contain">
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="text-[#666666] text-[20px] font-roboto">Serviced by:</p>
+                    <div>
+                        <h3 class="font-semibold text-[#2D2D2D] text-[20px] text-roboto config tracking-tight">GSA LIFE CARE NETWORK (M) SDN BHD</h3>
+                        <div class="flex items-center gap-3 mt-2 text-gray-800 font-medium">
+                           <img src="images/phred.svg" alt="" class="w-[28.2px] h-[28.2px]">
+                            <span class="text-[#000000] text-[20px] font-roboto">011 562 16906, 011 1608 6906</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex items-center mt-4 md:mt-0" x-data="{ open: true }">
+                <button @mouseenter="open = true" @mouseleave="open = false" class="text-[#e31e18] hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
+
+                <div 
+                    x-show="open" 
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 scale-95"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    class="absolute right-full mr-4 top-1/2 -translate-y-1/2 w-[320px] bg-[#333333] text-white p-5 rounded-xl shadow-2xl z-10"
+                >
+                    <div class="absolute top-1/2 -right-2 -translate-y-1/2 w-4 h-4 bg-[#333333] rotate-45"></div>
+                    
+                    <div class="relative z-20 space-y-3 text-[13px] leading-relaxed">
+                        <p class="text-[14px] font-roboto">Please make sure to insert correct name as per below.</p>
+                        
+                        <div>
+                            <p class="font-semibold border-b border-gray-600 pb-1 mb-1 text-[14px] font-roboto">Company/Individual Name</p>
+                            <p><span class="font-semibold text-[14px] font-roboto">Company:</span> Please insert name of your sdn Bhd, Partnership or Sole Proprietor</p>
+                        </div>
+
+                        <p><span class="font-semibold text-[14px] font-roboto">Individual:</span> If using personal name (no SSM), please insert your full name as per IC.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section>
+     <div class="max-w-7xl mx-auto px-4 py-20">
+    <div class="w-full mx-auto bg-white rounded-[20px] p-4 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        
+        <h2 class="text-[32px] md:text-[32px] font-montserrat text-black mb-6 font-bold tracking-tight">
+            Insert Insurance Transaction Reference (ITR) Numbers from FWCMS
+        </h2>
+
+        <div class="space-y-1 mb-10 text-black font-roboto text-[20px] leading-relaxed">
+            <p>1) In FWCMS, Generate ITR No. by selecting "<span class="underline font-medium decoration-gray-400">Offline - Self Insurance Purchase</span>". Click here for <a href="#" class="font-bold underline decoration-2 underline-offset-2">guide.</a></p>
+            <p>2) You will receive an email from FWCMS containing ITR Numbers.</p>
+            <p>3) Insert the ITR and SSM number below and Press to Continue. Click here for <a href="#" class="font-bold underline decoration-2 underline-offset-2">guide.</a></p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            
+            <div class="space-y-3">
+                <label class="block text-black font-roboto text-[20px]">
+                    FWCMS ITR Number (FWHS/SPIKPA)<span class="text-red-600">*</span>
+                </label>
+                <input type="text" 
+                    placeholder="PHS25XXXXXXXXXXXXXXXX" 
+                    class="w-full px-6 py-4 rounded-full text-[16px] border border-[#E8E8E8] bg-white focus:outline-none focus:ring-2 focus:ring-red-100 focus:border-red-500 transition-all placeholder:text-[#66666680]">
+            </div>
+
+            <div class="space-y-3">
+                <label class="block text-black font-roboto text-[20px]">
+                    FWCMS ITR Number (FWIG)<span class="text-red-600">*</span>
+                </label>
+                <input type="text" 
+                    placeholder="PIG25XXXXXXXXXXXXXXXX" 
+                    class="w-full px-6 py-4 rounded-full text-[16px] border border-[#E8E8E8] bg-white focus:outline-none focus:ring-2 focus:ring-red-100 focus:border-red-500 transition-all placeholder:text-[#66666680]">
+            </div>
+
+            <div class="space-y-3">
+                <label class="block text-black font-roboto text-[20px]">
+                    SSM Business Reg. No./ IC. No<span class="text-red-600">*</span>
+                </label>
+                <input type="text" 
+                    class="w-full px-6 py-4 rounded-full text-[16px] border border-[#E8E8E8] bg-white focus:outline-none focus:ring-2 focus:ring-red-100 focus:border-red-500 transition-all">
+            </div>
+
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <button class="bg-[#D71212] font-roboto hover:bg-red-700 text-white font-bold py-3.5 px-12 rounded-full text-lg transition duration-300 shadow-md">
+                Continue
+            </button>
+            
+            <div class="flex flex-col md:flex-row items-center gap-4">
+                <a href="#" class="text-[#0070C0] hover:underline font-roboto underline text-[20px]">
+                    Click here for Manual Purchase (without ITR)
+                </a>
+                
+                <span class="text-[#D71212] text-[12px] font-roboto text-center md:text-left leading-tight">
+                    Manual purchase strictly only for manual JIM counter submissions
+                </span>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+<footer class="bg-[#F7F7F7]">
+       <div class="max-w-7xl mx-auto px-6 py-12"> 
+        <div class="flex flex-col md:flex-row justify-between items-center border-b border-[#0000001A] pb-8 mb-12">
+            <h1 class="text-3xl md:text-[38px] font-montserrat font-bold text-[#000000E5] tracking-tight leading-[49px]">
+                Buy and Renew Your <br class="hidden md:block"> SPIKPA IG Insurance Today
+            </h1>
+            <button class="mt-6 md:mt-0 w-[160px] bg-[#D81212] hover:bg-red-700 text-white font-bold py-4 px-4 font-montserrat rounded-full text-[18px] transition duration-300">
+                Renew Now
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+            
+            <div class="space-y-4 lg:col-span-2">
+                <div class="flex items-center gap-2">
+                    <div class="p-1.5 rounded-lg">
+                        <img src="images/logo.svg" alt="logo" class="w-[248px] h-[40px]">
+                    </div>
+                </div>
+                <p class="text-[#737373] lg:w-[326px] text-[16px] leading-relaxed font-roboto">
+                    einsurans is your trusted digital platform for foreign worker insurance SPIKPA IG in Malaysia. A digital Initiative with Koperasi Imigresen (KOPRIMA).
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-medium font-roboto text-[20px] text-black mb-6">Quick Links</h3>
+                <ul class="space-y-4 text-gray-500 text-sm">
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Home</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Why Us</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Claims</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">FAQ</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Tutorial</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Quick Quote</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-medium font-roboto text-[20px] text-black mb-6">Payments</h3>
+                <div class="grid grid-cols-2 gap-2 max-w-[180px]">
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/FPXPersonal.svg" alt="FPX" class="h-full">
+                    </div>
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/FPXCorporatelogo.svg" alt="FPX" class="h-full">
+                    </div>
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/visa.svg" alt="Visa" class="h-full">
+                    </div>
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/versing.svg" alt="Verisign" class="h-full">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="font-medium font-roboto text-[20px] text-black mb-6">Contact Us</h3>
+                <ul class="space-y-4 text-sm text-gray-600">
+                    <li class="flex items-center gap-3">
+                        <img src="images/Mail.svg" alt="mail">
+                        <span class="text-[#666666] text-[16px] font-roboto">hello@einsuransmy.com</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="images/Phonecall.svg" alt="phone">
+                        <span class="text-[#666666] text-[16px] font-roboto">011 562 16906, 011 1608 6906</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="images/Clock.svg" alt="clock">
+                        <span class="text-[#666666] text-[16px] font-roboto">Mon-Sun 9am-6pm</span>
+                    </li>
+                </ul>
+               <button class="w-[170px] mt-8 h-[50px] bg-[#34B658] text-white rounded-[30px] px-[10px] py-[6px] flex items-center justify-center gap-2 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] hover:bg-[#2ea04d] transition duration-300">
+                       <img class="w-[24.17px] h-[24.17px]" src="images/whatsapp.svg" alt="whatsapp.svg">
+                       <span class="font-roboto font-bold text-[16px] leading-none tracking-normal">WhatsApp Us</span>
+                    </button>
+            </div>
+        </div>
+
+        <div class="border-t text-center border-[#0000001A] mt-16 pt-8 lg:flex space-y-2 md:row lg:justify-between items-center gap-6">
+            <p class="text-[#666666]  text-[14px] font-roboto">
+                ©2026 Financial Link Sdn Bhd
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/globe.svg" alt=""></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/tictok.svg" alt=""></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/wp.svg" alt=""></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/instagram.svg" alt=""></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/facebook.svg" alt=""></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/linkdin.svg" alt=""></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/youtube.svg" alt=""></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/oo.svg" alt=""></a>
+                <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/x.svg" alt=""></a>
+                 <a href="#" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-red-600 hover:text-white transition"><img src="images/bf.svg" alt=""></a>
+            </div>
+        </div>
+
+    </footer>
+    </div>
+</body>
+</html>
