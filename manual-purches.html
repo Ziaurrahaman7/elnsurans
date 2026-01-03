@@ -93,7 +93,7 @@
      <div class="max-w-7xl mx-auto px-4 py-10">
         <h1 class="text-[32px] font-bold text-black font-montserrat mb-6">Foreign Worker Insurance Purchase</h1>
 
-        <div class="bg-[#f8f9f9] rounded-2xl p-8 flex flex-wrap items-center justify-between border border-gray-100 relative shadow-sm">
+        <div class="bg-[#f8f9f9] rounded-2xl p-8 flex flex-wrap items-start justify-between border border-gray-100 relative shadow-sm">
             
             <div class="flex flex-wrap gap-12 items-center">
                 <div class="space-y-3">
@@ -374,8 +374,8 @@
                     <div class="space-y-3">
                         <label class="block text-[16px] font-roboto text-[#2D2D2D]">Date of birth</label>
                         <div class="relative">
-                            <input type="text" placeholder="DD/MM/YYYY" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none bg-white">
-                            <svg class="w-5 h-5 absolute right-6 top-1/2 -translate-y-1/2 text-brandRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                            <input type="date" placeholder="DD/MM/YYYY" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none bg-white">
+                            <!-- <svg class="w-5 h-5 absolute right-6 top-1/2 -translate-y-1/2 text-brandRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg> -->
                         </div>
                     </div>
                 </div>
@@ -432,9 +432,10 @@
             </div>
 
             <div class="flex flex-wrap items-center gap-4">
-                <div class="flex items-center bg-[#f8f9f9] border border-gray-200 rounded-full px-2 py-1.5 md:min-w-[320px] justify-between">
-                    <span class="text-[#8A898E] text-[16px] font-roboto pl-4">No File Chosen</span>
-                    <button class="bg-[#D71212] hover:bg-red-700 text-white font-roboto text-[16px] py-2.5 px-6 rounded-full text-sm transition shadow-md">
+                <div class="flex items-center bg-[#f8f9f9] border border-gray-200 rounded-full px-2 py-1.5 md:min-w-[320px] justify-between relative">
+                    <input type="file" id="fileUpload" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept=".xlsx,.xls,.csv">
+                    <span class="text-[#8A898E] text-[16px] font-roboto pl-4 pointer-events-none" id="fileName">No File Chosen</span>
+                    <button class="bg-[#D71212] hover:bg-red-700 text-white font-roboto text-[16px] py-2.5 px-6 rounded-full text-sm transition shadow-md pointer-events-none">
                         Upload Data
                     </button>
                 </div>
@@ -793,3 +794,9 @@
     </div>
 </body>
 </html>
+<script>
+    document.getElementById('fileUpload').addEventListener('change', function(e) {
+        const fileName = e.target.files[0] ? e.target.files[0].name : 'No File Chosen';
+        document.getElementById('fileName').textContent = fileName;
+    });
+</script>
