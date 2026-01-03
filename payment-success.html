@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elnsurans Design</title>
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        brandRed: '#D71212',
+                        cardBgPink: '#FFF5F5',
+                    },
+                    backgroundImage: {
+                        'cardBg': 'linear-gradient(180deg, #F1F2F4 0%, #FFF5F5 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <header class="bg-white font-roboto fixed top-0 left-0 right-0 z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <img class="w-[248px] h-[39.82px]" src="images/logo.svg" alt="logo">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Home</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Why Us</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Claims</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">FAQ</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Tutorial</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Quick Quote</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <button class="w-[170px] h-[50px] bg-[#34B658] text-white rounded-[30px] px-[10px] py-[6px] flex items-center justify-center gap-2 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] hover:bg-[#2ea04d] transition duration-300">
+                       <img class="w-[24.17px] h-[24.17px]" src="images/whatsapp.svg" alt="whatsapp.svg">
+                       <span class="font-roboto font-bold text-[16px] leading-none tracking-normal">WhatsApp Us</span>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="open = !open" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg x-show="!open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg x-show="open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div x-show="open" x-transition class="md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Home</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Why Us</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Claims</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">FAQ</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Tutorial</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Quick Quote</a>
+                    <button class="w-[170px] h-[50px] bg-[#34B658] text-white rounded-[30px] px-[10px] py-[6px] flex items-center justify-center gap-2 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] hover:bg-[#2ea04d] transition duration-300">
+                       <img class="w-[24.17px] h-[24.17px]" src="images/whatsapp.svg" alt="whatsapp.svg">
+                       <span class="font-roboto font-bold text-[16px] leading-none tracking-normal">WhatsApp Us</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+<section class="pt-[100px]">
+
+</section>
+<section class="px-4">
+     <div class="max-w-7xl mx-auto px-4 py-10">
+    <div class="w-full text-center">
+        
+        <div class="flex justify-center mb-8">
+           <img src="images/tik.svg" class="w-[80px] h-[80px]" alt="">
+        </div>
+
+        <h1 class="text-[58px] md:text-[48px] font-bold text-black font-montserrat mb-1 tracking-tight">
+            Payment Successful
+        </h1>
+        <p class="text-[#3D3D3D] text-[18px] font-roboto mb-12">
+            Thank you for choosing einsurans as your trusted digital platform.
+        </p>
+
+        <div class="max-w-[48.5rem] mx-auto space-y-8 text-left">
+            
+            <div class="flex items-center gap-4">
+                <div class="bg-[#f2f2f2] p-3 rounded-full flex-shrink-0 relative">
+                    <img src="images/blackm.svg" class="rounded-full" alt="message icon">
+                </div>
+                <p class="text-[18px] text-black font-roboto leading-snug pt-1">
+                    Your <span class="font-semibold">policy documents</span> has been emailed to you. Please check now and keep for your records.
+                </p>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="bg-[#f2f2f2] p-3 rounded-full flex-shrink-0">
+                    <img src="images/fwcms.svg" class="rounded-full" alt="fwcms icon">
+                </div>
+                <div class="text-[18px] text-black font-roboto leading-snug pt-1">
+                    Your <span class="font-semibold">FWCMS</span> status will be auto-updated to <span class="font-bold">"Insurance Purchased"</span> very shortly. 
+                    You will also receive email from FWCMS. <a href="#" class="font-bold underline">Whatsapp Us</a> if the status is still "ITR Generated".
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</section>
+<section class="px-4">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+        <div class="w-full mx-auto bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        
+        <h2 class="text-[32px] font-bold text-black font-montserrat mb-8 tracking-tight">Insurance Purchase Summary</h2>
+
+        <div class="mb-8">
+            <p class="font-bold text-black font-roboto text-[20px] uppercase">RRC CONSTRUCTION (M) SDN BHD</p>
+            <p class="font-bold text-black font-roboto text-[20px] uppercase">123456-W</p>
+        </div>
+
+        <div class="space-y-1 mb-10 text-[20px] text-black font-roboto">
+            <p><span class="w-40">Payment Status:</span> <span class="text-[#34B658] font-bold">Success</span></p>
+            <p><span class="w-40">Transaction Period:</span> <span class="font-bold">01/12/2025, 10:00:00</span></p>
+            <p><span class="w-40">Payment Ref.:</span> <span class="font-bold">AA12345552</span></p>
+            <p><span class="w-40">Bank Approval Code:</span> <span class="font-bold">A1234213</span></p>
+            <p><span class="w-40">Payment Amount:</span> <span class="font-bold">RM203.60</span></p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl md:max-w-[674px] p-4 border border-gray-100 bg-[#F5F5F5] mb-10">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-white border-b border-gray-100">
+                        <th class="px-3 py-3 text-[19.4px] font-semibold text-black font-roboto">Products</th>
+                        <th class="px-3 py-3 text-[19.4px] font-semibold text-black font-roboto">Policy No. / Cover Note No.</th>
+                        <th class="px-3 py-3 text-[19.4px] font-semibold text-black font-roboto text-center">Download Now</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700 font-medium">
+                    <tr class="border-b border-[#DDDDDD] last:border-0">
+                        <td class="px-3 py-6 text-[#595959] font-roboto text-[17.46px]">FWHS/SPIKPA</td>
+                        <td class="px-3 py-6 text-[#595959] font-roboto text-[17.46px] ">W25HWAS1D2A21SAD2ASD</td>
+                        <td class="px-3 py-6 text-center">
+                            <button class="bg-[#D81212] hover:bg-red-700 font-roboto w-[140px] text-white font-bold py-2 px-2 rounded-full text-[15px] transition shadow-sm">
+                                Download Policy
+                            </button>
+                        </td>
+                    </tr>
+                    <tr class="border-b border-[#DDDDDD] last:border-0">
+                        <td class="px-3 py-6 text-[#595959] font-roboto text-[17.46px]">FWHS/SPIKPA</td>
+                        <td class="px-3 py-6 text-[#595959] font-roboto text-[17.46px] ">W25HWAS1D2A21SAD2ASD</td>
+                        <td class="px-3 py-6 text-center">
+                            <button class="bg-[#D81212] hover:bg-red-700 font-roboto w-[140px] text-white font-bold py-2 px-2 rounded-full text-[15px] transition shadow-sm">
+                                Download Policy
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="text-[18px] font-roboto  leading-relaxed">
+            <p class="font-bold text-[18px] font-roboto underline mb-2">Note:</p>
+            <p class="mb-4 text-[18px] font-roboto">
+                As per Bank Negara Malaysia (BNM) guideline, you may cancel your policy by returning the policy within 15 days after you have received the policy. The premiums that you have paid (less administrative cost incurred) will be refunded to you.
+            </p>
+            <p class="mb-4 text-[18px] font-roboto">
+                However, you must provide supporting evidence on cancellation reason such as:
+            </p>
+            <ul class="list-none space-y-1 mb-6">
+                <li class="mb-4 text-[18px] font-roboto">• Permit not approved</li>
+                <li class="mb-4 text-[18px] font-roboto">• Worker has returned to source country</li>
+                <li class="mb-4 text-[18px] font-roboto">• Documentation of new insurance purchase</li>
+            </ul>
+            <p>
+                If you accidentally purchase without ITR or there is incorrect info, please <a href="#" class="text-brandRed font-bold underline">Whatsapp Us 011 562 16906</a> for assistance.
+            </p>
+        </div>
+
+    </div>
+    </div>
+</section>
+<section class="px-4">
+        <div class="max-w-7xl mx-auto px-4 py-10">
+<div class="w-full mx-auto bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+            
+            <div class="col-span-2 items-center lg:items-start gap-2">
+                  <h2 class="text-[32px] font-bold text-black font-montserrat mb-6 text-left">Stay Connected with Us</h2>
+                <div class="flex gap-4 items-start  flex-col lg:flex-row">
+<div class="text-center">
+                  
+                    
+                    <div class="">
+                        <div class="w-full flex items-center justify-center relative">
+                            <img src="images/qr.svg" alt="QR Code" class="w-full h-full lg:w-[320px] lg:h-[364px]">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-roboto font-bold text-[25px] mb-6 leading-tight">
+                        Save Our Contact and <br> Whatsapp Us for:
+                    </h3>
+                    <ul class="space-y-4 text-black font-medium text-[20px]">
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1.5 w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></span>
+                            FWCMS step by step guidance
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1.5 w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></span>
+                            Endorsements (change info)
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1.5 w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></span>
+                            Manual insurance purchase (bank in)
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1.5 w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></span>
+                            Insurance Renewal Support
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1.5 w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></span>
+                            Receive offers and promotions
+                        </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-start">
+                <h2 class="text-[32px] font-bold text-black font-montserrat mb-6 text-center lg:text-left w-full max-w-sm">
+                    Cashless Admission <br> for FWHS/SPIKPA
+                </h2>
+                
+                <div class="border-2 border-[#222222] rounded-[20px] p-3 overflow-hidden shadow-sm mb-6 max-w-[204px]">
+                    <img src="images/Claims-Kit-eInsurans-min.svg" alt="Admission Guide" class="w-full h-auto">
+                </div>
+
+                <button class="bg-[#D81212] hover:bg-red-700  font-roboto text-white font-bold py-3 px-10 rounded-full text-[15px] transition duration-300 shadow-md">
+                    Click to know more
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+</section>
+<footer class="bg-[#F7F7F7]">
+       <div class="max-w-7xl mx-auto px-6 py-12"> 
+       
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+            
+            <div class="lg:col-span-2">
+                <div class="flex items-center gap-2">
+                    <div class="p-1.5 rounded-lg">
+                        <h3 class="font-bold font-roboto text-[24px]">Downloads</h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 mt-4">
+                    <a href="">
+                        <img src="images/download.svg" alt="">
+                    </a>
+                <p class="text-[#2D2D2D] lg:w-[326px] text-[12px] leading-relaxed font-roboto">
+                    Foreign Worker Hospitalisation Scheme Product Disclosure Sheet (EN)
+                </p>
+            </div>
+            <div class="flex items-center gap-2 mt-4">
+                    <a href="">
+                        <img src="images/download.svg" alt="">
+                    </a>
+                <p class="text-[#2D2D2D] lg:w-[326px] text-[12px] leading-relaxed font-roboto">
+                  Foreign Worker Hospitalisation Scheme Policy Wording
+                </p>
+            </div>
+            <div class="mt-[40px] flex gap-2.5 items-center">
+                <img src="images/s1.svg" alt="media partner">
+                <img src="images/s2.svg" alt="media partner">
+                <img src="images/s3.svg" alt="media partner">
+                <img src="images/s4.svg" alt="media partner">
+                <img src="images/s5.svg" alt="media partner">
+                <img src="images/s6.svg" alt="media partner">
+                <img src="images/s7.svg" alt="media partner">
+                <img src="images/s8.svg" alt="media partner">
+                <img src="images/s9.svg" alt="media partner">
+                <img src="images/s10.svg" alt="media partner">
+            </div>
+            </div>
+
+            <div>
+                <h3 class="font-medium font-roboto text-[20px] text-black mb-6">Self Help</h3>
+                <ul class="space-y-4 text-gray-500 text-sm">
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Home</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Why Us</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Claims</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">FAQ</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Tutorial</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Quick Quote</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-medium font-roboto text-[20px] text-black mb-6">Payments</h3>
+                <div class="grid grid-cols-2 gap-2 max-w-[180px]">
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/FPXPersonal.svg" alt="FPX" class="h-full">
+                    </div>
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/FPXCorporatelogo.svg" alt="FPX" class="h-full">
+                    </div>
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/visa.svg" alt="Visa" class="h-full">
+                    </div>
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/versing.svg" alt="Verisign" class="h-full">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="font-medium font-roboto text-[20px] text-black mb-6">Contact Us</h3>
+                <ul class="space-y-4 text-sm text-gray-600">
+                    <li class="flex items-center gap-3">
+                        <img src="images/Mail.svg" alt="mail">
+                        <span class="text-[#666666] text-[16px] font-roboto">hello@einsuransmy.com</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="images/Phonecall.svg" alt="phone">
+                        <span class="text-[#666666] text-[16px] font-roboto">011 562 16906, 011 1608 6906</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="images/Clock.svg" alt="clock">
+                        <span class="text-[#666666] text-[16px] font-roboto">Mon-Sun 9am-6pm</span>
+                    </li>
+                </ul>
+               <button class="w-[170px] mt-8 h-[50px] bg-[#34B658] text-white rounded-[30px] px-[10px] py-[6px] flex items-center justify-center gap-2 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] hover:bg-[#2ea04d] transition duration-300">
+                       <img class="w-[24.17px] h-[24.17px]" src="images/whatsapp.svg" alt="whatsapp.svg">
+                       <span class="font-roboto font-bold text-[16px] leading-none tracking-normal">WhatsApp Us</span>
+                    </button>
+            </div>
+        </div>
+
+        <div class="border-t text-center border-[#0000001A] mt-16 pt-8 space-y-2 md:row items-center gap-6">
+            <p class="text-[#666666]  text-[16px] font-roboto">
+              The site is owned and managed by Financial Link Sdn Bhd. Copyright 2026 Financial Link Sdn Bhd
+            </p>
+            
+        </div>
+
+    </footer>
+    </div>
+</body>
+</html>
