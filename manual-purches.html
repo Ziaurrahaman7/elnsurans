@@ -647,20 +647,23 @@
             <p class="text-[20px] font-bold">Amount to Pay: <span class="font-normal">RM203.60</span></p>
         </div>
 
-        <div class="md:flex items-center space-y-2 justify-left gap-6 mb-10">
+        <div class="md:flex items-center space-y-2 justify-left gap-6 mb-10" x-data="{ selected: 'visa' }">
             
-            <div class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] hover:border-red-500 transition cursor-pointer w-[180px] h-[101px]">
+            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[180px] h-[101px]" :class="selected === 'visa' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
+                <input type="radio" name="payment" value="visa" x-model="selected" class="hidden">
                 <img src="images/visa.svg" alt="Visa" class="h-8 mb-2">
-            </div>
+            </label>
 
-            <div class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] hover:border-red-500 transition cursor-pointer w-[180px] h-[101px]">
-                <img src="images/FPXPersonal.svg" alt="Visa" class="h-8 mb-2">
-            </div>
-            <div class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] hover:border-red-500 transition cursor-pointer w-[180px] h-[101px]">
-                <img src="images/FPXCorporatelogo.svg" alt="Visa" class="h-8 mb-2">
-            </div>
+            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[180px] h-[101px]" :class="selected === 'fpx-personal' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
+                <input type="radio" name="payment" value="fpx-personal" x-model="selected" class="hidden">
+                <img src="images/FPXPersonal.svg" alt="FPX Personal" class="h-8 mb-2">
+            </label>
+            
+            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[180px] h-[101px]" :class="selected === 'fpx-corporate' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
+                <input type="radio" name="payment" value="fpx-corporate" x-model="selected" class="hidden">
+                <img src="images/FPXCorporatelogo.svg" alt="FPX Corporate" class="h-8 mb-2">
+            </label>
 
-            <div></div>
         </div>
 
         <div class="mb-10 text-[20px] leading-relaxed text-black font-roboto">
@@ -671,9 +674,9 @@
         </div>
 
         <div>
-            <button class="bg-[#D71212] hover:bg-red-700 text-white font-bold font-roboto py-4 px-12 rounded-full text-[20px] transition duration-300 shadow-md">
+            <a href="payment-success.html"><button class="bg-[#D71212] hover:bg-red-700 text-white font-bold font-roboto py-4 px-12 rounded-full text-[20px] transition duration-300 shadow-md">
                 Make Payment
-            </button>
+            </button></a>
         </div>
 
         <div class="flex items-center gap-3 pt-6 border-t border-gray-100">
