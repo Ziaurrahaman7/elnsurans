@@ -117,9 +117,9 @@
 
             <div class="relative flex items-center mt-4 md:mt-0" x-data="{ open: false }">
                 <button @click="open = !open" class="text-[#e31e18] hover:scale-110 transition-transform">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                     <svg width="32" height="32" stroke="currentColor" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.5821 22.536H17.2334V14.5821H14.5821V22.536ZM15.9078 11.9308C16.2834 11.9308 16.5984 11.8036 16.853 11.549C17.1075 11.2945 17.2343 10.9799 17.2334 10.6052C17.2325 10.2305 17.1053 9.91584 16.8516 9.66132C16.598 9.40679 16.2834 9.27953 15.9078 9.27953C15.5322 9.27953 15.2176 9.40679 14.9639 9.66132C14.7103 9.91584 14.583 10.2305 14.5821 10.6052C14.5812 10.9799 14.7085 11.295 14.9639 11.5504C15.2193 11.8058 15.5339 11.9326 15.9078 11.9308ZM15.9078 29.1643C14.074 29.1643 12.3506 28.816 10.7377 28.1196C9.12487 27.4232 7.7219 26.4789 6.52881 25.2867C5.33573 24.0945 4.39143 22.6916 3.6959 21.0778C3.00038 19.464 2.65218 17.7407 2.65129 15.9078C2.65041 14.0748 2.99861 12.3515 3.6959 10.7377C4.39319 9.12399 5.3375 7.72101 6.52881 6.52881C7.72013 5.33661 9.12311 4.39231 10.7377 3.6959C12.3524 2.99949 14.0757 2.65129 15.9078 2.65129C17.7398 2.65129 19.4632 2.99949 21.0778 3.6959C22.6924 4.39231 24.0954 5.33661 25.2867 6.52881C26.478 7.72101 27.4228 9.12399 28.121 10.7377C28.8191 12.3515 29.1669 14.0748 29.1643 15.9078C29.1616 17.7407 28.8134 19.464 28.1196 21.0778C27.4259 22.6916 26.4816 24.0945 25.2867 25.2867C24.0919 26.4789 22.6889 27.4237 21.0778 28.121C19.4667 28.8183 17.7434 29.166 15.9078 29.1643ZM15.9078 26.513C18.8684 26.513 21.3761 25.4856 23.4308 23.4308C25.4856 21.3761 26.513 18.8684 26.513 15.9078C26.513 12.9472 25.4856 10.4395 23.4308 8.38472C21.3761 6.32996 18.8684 5.30259 15.9078 5.30259C12.9472 5.30259 10.4395 6.32996 8.38472 8.38472C6.32997 10.4395 5.30259 12.9472 5.30259 15.9078C5.30259 18.8684 6.32997 21.3761 8.38472 23.4308C10.4395 25.4856 12.9472 26.513 15.9078 26.513Z" fill="#D71212"/>
+</svg> 
                 </button>
 
                 <!-- Desktop Tooltip -->
@@ -195,7 +195,7 @@
 </section>
 <section class="px-4">
      <div class="max-w-7xl mx-auto px-4 py-10">
-    <div class="w-full mx-auto bg-white rounded-[20px] p-4 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+    <div class="w-full mx-auto bg-white rounded-[20px] p-4 md:p-8 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
         
         <h2 class="text-[32px] md:text-[32px] font-montserrat text-black mb-6 font-bold tracking-tight">
             Insert Insurance Transaction Reference (ITR) Numbers from FWCMS
@@ -259,11 +259,11 @@
 
 <section class="px-4">
      <div class="max-w-7xl mx-auto px-4 py-10">
-      <div class="w-full mx-auto bg-white rounded-[32px] p-6 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] border border-gray-50">
+      <div class="w-full mx-auto bg-white rounded-[32px] p-4 md:p-8 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] border border-gray-50">
         
         <h2 class="text-[32px] font-Montserrat text-black font-bold mb-10 tracking-tight">Update Employers Particulars</h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-3 mb-4">
             <div class="space-y-2">
                 <label class="block text-[16px] font-roboto text-[#2D2D2D]">Company/Individual Name<span class="text-brandRed">*</span></label>
                 <input type="text" placeholder="Example Sdn. Bhd" class="w-full text-[16px] px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
@@ -288,7 +288,7 @@
                 <input type="text" placeholder="Address 3 (optional)" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
             </div>
         </div>
-           <div class="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-6 mb-8">
+           <div class="grid grid-cols-1 md:grid-cols-4 gap-x-4 gap-y-3 mb-4">
              <div class="space-y-2">
                 <label class="block text-[16px] font-roboto text-[#2D2D2D]">Post Code<span class="text-brandRed">*</span></label>
                 <input type="text" placeholder="50450" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
@@ -310,7 +310,7 @@
                 </select>
             </div>
            </div>
- <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6 mb-8">
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-3 mb-8">
             <div class="space-y-2">
                 <label class="block text-[16px] font-roboto text-[#2D2D2D]">Email Address<span class="text-brandRed">*</span></label>
                 <input type="email" placeholder="example@gmail.com" class="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-red-500 placeholder:text-gray-300 bg-white">
@@ -325,7 +325,7 @@
             </div>
         </div>
 
-        <div class="bg-[#EFEFEF80] rounded-[24px] p-8 border border-gray-100 mt-12 relative overflow-hidden" x-data="{ open: true }">
+        <div class="bg-[#EFEFEF80] rounded-[24px] p-8 border border-gray-100 mt-8 relative overflow-hidden" x-data="{ open: true }">
             <div class="flex justify-between items-center mb-8">
                 <p class="text-[#D71212]  text-[20px] font-regular leading-snug">
                     For Individual Employers using IC Number to employ foreign worker (Not for Companies)
@@ -393,7 +393,7 @@
 </section>
 <section class="px-4">
     <div class="max-w-7xl mx-auto px-4 py-10"> 
-        <div class="w-full mx-auto bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        <div class="w-full mx-auto bg-white rounded-[32px] p-4 md:p-8 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
         
         <h2 class="text-[32px] font-bold font-montserrat text-[#000000] mb-8 tracking-tight">Upload Worker Listing</h2>
 
@@ -456,7 +456,7 @@
 
 <section class="px-4">
     <div class="max-w-7xl mx-auto px-4 py-10"> 
- <div class="w-full bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+ <div class="w-full bg-white rounded-[32px] p-4 md:p-8 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
         
         <h2 class="text-[32px] font-bold font-montserrat text-black mb-8 tracking-tight">
           Worker Details and Period of Insurance
@@ -554,18 +554,18 @@
 
 <section class="px-4">
     <div class="max-w-7xl mx-auto px-4 py-10"> 
-        <div class="w-full bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        <div class="w-full bg-white rounded-[32px] p-4 md:p-8 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
         
         <h2 class="text-[32px] font-bold font-montserrat text-black mb-8 tracking-tight">Premium Summary</h2>
 
         <div class="flex flex-col md:flex-row justify-between gap-8 mb-10 text-[15px] leading-relaxed text-gray-800">
-            <div>
+            <div class="w-full">
                 <p class="font-bold font-roboto text-[20px] uppercase">RRC CONSTRUCTION (M) SDN BHD</p>
                 <p class="font-roboto text-[20px]">NO.1-3, JALAN 5/76B</p>
                 <p class="font-roboto text-[20px]">DESA PANDAN,</p>
                 <p class="font-roboto text-[20px]">55100 KUALA LUMPUR</p>
             </div>
-            <div class="font-roboto text-[20px]">
+            <div class="font-roboto text-[20px] w-full">
                 <p><span class="font-bold ">Sector:</span> Construction</p>
                 <p><span class="font-bold">Email:</span> example@gmail.com</p>
                 <p><span class="font-bold">Contact:</span> 012-34567849, 03-70771231</p>
@@ -623,7 +623,7 @@
             <div class="mt-1">
                 <input type="radio" name="declare" id="declare" class="w-5 h-5 accent-[#D71212] cursor-pointer">
             </div>
-            <label for="declare" class="text-[15px] font-roboto mb-8 leading-relaxed cursor-pointer">
+            <label for="declare" class="text-[15px] font-roboto mb-0 leading-relaxed cursor-pointer">
                 I/We have understood and read the declaration <a href="#" class="text-[#D71212] underline">here</a>. This is a product made available for purchase on this platform. By proceeding with the services provided by GSA Life Care (M) Sdn Bhd, the applicable commission will be charged. For similar products, you may visit any of Generali's branches to enjoy premium rebate. Generali Insurance Malaysia Berhad is a member of PIDM. The benefit(s) payable under eligible product is protected by PIDM up to limits. Please refer to PIDM's TIPS Brochure or contact Generali Insurance Malaysia Berhad or PIDM (visit <a href="https://www.pidm.gov.my" class="text-blue-600 hover:underline">www.pidm.gov.my</a>).
             </label>
         </div>
@@ -638,7 +638,7 @@
 
 <section class="px-4">
      <div class="max-w-7xl mx-auto px-4 py-10"> 
-        <div class="w-full mx-auto bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        <div class="w-full mx-auto bg-white rounded-[32px] p-4 md:p-8 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
         
         <h2 class="text-[32px] font-montserrat font-bold text-black mb-6 tracking-tight">Select Payment Method</h2>
 
@@ -649,17 +649,17 @@
 
         <div class="md:flex items-center space-y-2 justify-left gap-6 mb-10" x-data="{ selected: 'visa' }">
             
-            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[180px] h-[101px]" :class="selected === 'visa' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
+            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[189px] h-[101px]" :class="selected === 'visa' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
                 <input type="radio" name="payment" value="visa" x-model="selected" class="hidden">
                 <img src="images/visa.svg" alt="Visa" class="h-8 mb-2">
             </label>
 
-            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[180px] h-[101px]" :class="selected === 'fpx-personal' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
+            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[189px] h-[101px]" :class="selected === 'fpx-personal' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
                 <input type="radio" name="payment" value="fpx-personal" x-model="selected" class="hidden">
                 <img src="images/FPXPersonal.svg" alt="FPX Personal" class="h-8 mb-2">
             </label>
             
-            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[180px] h-[101px]" :class="selected === 'fpx-corporate' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
+            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[189px] h-[101px]" :class="selected === 'fpx-corporate' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
                 <input type="radio" name="payment" value="fpx-corporate" x-model="selected" class="hidden">
                 <img src="images/FPXCorporatelogo.svg" alt="FPX Corporate" class="h-8 mb-2">
             </label>
@@ -772,7 +772,7 @@
                     </li>
                     <li class="flex items-center gap-3">
                         <img src="images/Phonecall.svg" alt="phone">
-                        <span class="text-[#666666] text-[16px] font-roboto">011 562 16906, 011 1608 6906</span>
+                        <span class="text-[#666666] text-[16px] font-roboto">011 562 16906, <br> 011 1608 6906</span>
                     </li>
                     <li class="flex items-center gap-3">
                         <img src="images/Clock.svg" alt="clock">
