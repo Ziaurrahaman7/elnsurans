@@ -30,7 +30,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-    <header class="bg-white font-roboto fixed top-0 left-0 right-0 z-50" x-data="{ open: false }">
+    <header class="bg-white font-roboto fixed top-0 left-0 right-0 z-50 transition-shadow duration-300" x-data="{ open: false, scrolled: false }" @scroll.window="scrolled = window.pageYOffset > 0" :class="{ 'shadow-lg': scrolled }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
