@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elnsurans Design</title>
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        brandRed: '#D71212',
+                        cardBgPink: '#FFF5F5',
+                    },
+                    backgroundImage: {
+                        'cardBg': 'linear-gradient(180deg, #F1F2F4 0%, #FFF5F5 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <header class="bg-white font-roboto fixed top-0 left-0 right-0 z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                     <a href="/"><img class="w-[248px] h-[39.82px]" src="images/logo.svg" alt="logo"></a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Home</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Why Us</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Claims</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">FAQ</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Tutorial</a>
+                    <a href="#" class="text-black hover:text-[#D71212] transition duration-300 font-roboto font-medium text-[18px] leading-none tracking-normal">Quick Quote</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <button class="w-[170px] h-[50px] bg-[#34B658] text-white rounded-[30px] px-[10px] py-[6px] flex items-center justify-center gap-2 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] hover:bg-[#2ea04d] transition duration-300">
+                       <img class="w-[24.17px] h-[24.17px]" src="images/whatsapp.svg" alt="whatsapp.svg">
+                       <span class="font-roboto font-bold text-[16px] leading-none tracking-normal">WhatsApp Us</span>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="open = !open" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg x-show="!open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg x-show="open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div x-show="open" x-transition class="md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200">
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Home</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Why Us</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Claims</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">FAQ</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Tutorial</a>
+                    <a href="#" class="block px-3 py-2 text-black hover:text-[#D71212] hover:bg-gray-50 rounded-md font-roboto font-medium text-[18px] leading-none tracking-normal">Quick Quote</a>
+                    <button class="w-[170px] h-[50px] bg-[#34B658] text-white rounded-[30px] px-[10px] py-[6px] flex items-center justify-center gap-2 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] hover:bg-[#2ea04d] transition duration-300">
+                       <img class="w-[24.17px] h-[24.17px]" src="images/whatsapp.svg" alt="whatsapp.svg">
+                       <span class="font-roboto font-bold text-[16px] leading-none tracking-normal">WhatsApp Us</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+<section class="pt-[100px]">
+
+</section>
+<section class="px-4">
+     <div class="max-w-7xl mx-auto px-4 py-10">
+        <h1 class="text-[32px] font-bold text-black font-montserrat mb-6">Foreign Worker Insurance Purchase</h1>
+
+        <div class="bg-[#f8f9f9] rounded-2xl p-8 flex flex-wrap items-start justify-between border border-gray-100 relative shadow-sm">
+            
+            <div class="flex flex-wrap gap-12 items-center">
+                <div class="space-y-3">
+                    <p class="text-[#666666] text-[20px] font-roboto">Underwritten by :</p>
+                    <div class="h-16 flex items-center">
+                        <img src="images/tokio.svg" alt="Tokio Marine" class="h-[146px] h-[80px] object-contain">
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <p class="text-[#666666] text-[20px] font-roboto">Serviced by:</p>
+                    <div>
+                        <h3 class="font-semibold text-[#2D2D2D] text-[20px] text-roboto config tracking-tight">GSA LIFE CARE NETWORK (M) SDN BHD</h3>
+                        <div class="flex items-center gap-3 mt-2 text-gray-800 font-medium">
+                           <img src="images/phred.svg" alt="" class="w-[28.2px] h-[28.2px]">
+                            <span class="text-[#000000] text-[20px] font-roboto">011 562 16906, 011 1608 6906</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex items-center mt-4 md:mt-0" x-data="{ open: false }">
+                <button @click="open = !open" class="text-[#e31e18] hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
+
+                <!-- Desktop Tooltip -->
+                <div 
+                    x-show="open" 
+                    @mouseenter="open = true" 
+                    @mouseleave="open = false"
+                    x-transition:enter="transition ease-out duration-200"
+                    x-transition:enter-start="opacity-0 scale-95"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    class="hidden md:block absolute right-full mr-4 top-1/2 -translate-y-1/2 w-[320px] bg-[#333333] text-white p-5 rounded-xl shadow-2xl z-10"
+                >
+                    <div class="absolute top-1/2 -right-2 -translate-y-1/2 w-4 h-4 bg-[#333333] rotate-45"></div>
+                    
+                    <div class="relative z-20 space-y-3 text-[13px] leading-relaxed">
+                        <p class="text-[14px] font-roboto">Please make sure to insert correct name as per below.</p>
+                        
+                        <div>
+                            <p class="font-semibold border-b border-gray-600 pb-1 mb-1 text-[14px] font-roboto">Company/Individual Name</p>
+                            <p><span class="font-semibold text-[14px] font-roboto">Company:</span> Please insert name of your sdn Bhd, Partnership or Sole Proprietor</p>
+                        </div>
+
+                        <p><span class="font-semibold text-[14px] font-roboto">Individual:</span> If using personal name (no SSM), please insert your full name as per IC.</p>
+                    </div>
+                </div>
+
+                <!-- Mobile Modal -->
+                <div 
+                    x-show="open" 
+                    @click.away="open = false"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition ease-in duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+                >
+                    <div 
+                        x-transition:enter="transition ease-out duration-300 delay-100"
+                        x-transition:enter-start="opacity-0 scale-95"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-200"
+                        x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-95"
+                        class="bg-white rounded-xl p-6 max-w-sm w-full shadow-2xl"
+                    >
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-semibold text-gray-900">Information</h3>
+                            <button @click="open = false" class="text-gray-400 hover:text-gray-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="space-y-3 text-sm text-gray-700">
+                            <p class="font-roboto">Please make sure to insert correct name as per below.</p>
+                            
+                            <div>
+                                <p class="font-semibold border-b border-gray-200 pb-1 mb-2 font-roboto">Company/Individual Name</p>
+                                <p><span class="font-semibold font-roboto">Company:</span> Please insert name of your sdn Bhd, Partnership or Sole Proprietor</p>
+                            </div>
+
+                            <p><span class="font-semibold font-roboto">Individual:</span> If using personal name (no SSM), please insert your full name as per IC.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="px-4">
+     <div class="max-w-7xl mx-auto px-4 py-10">
+    <div class="w-full mx-auto bg-white rounded-[20px] p-4 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        
+        <h2 class="text-[32px] md:text-[32px] font-montserrat text-black mb-6 font-bold tracking-tight">
+            Insert Insurance Transaction Reference (ITR) Numbers from FWCMS
+        </h2>
+
+        <div class="space-y-1 mb-10 text-black font-roboto text-[20px] leading-relaxed">
+            <p>1) In FWCMS, Generate ITR No. by selecting "<span class="underline font-medium decoration-gray-400">Offline - Self Insurance Purchase</span>". Click here for <a href="#" class="font-bold underline decoration-2 underline-offset-2">guide.</a></p>
+            <p>2) You will receive an email from FWCMS containing ITR Numbers.</p>
+            <p>3) Insert the ITR and SSM number below and Press to Continue. Click here for <a href="#" class="font-bold underline decoration-2 underline-offset-2">guide.</a></p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            
+            <div class="space-y-3">
+                <label class="block text-black font-roboto text-[20px]">
+                    FWCMS ITR Number (FWHS/SPIKPA)<span class="text-brandRed">*</span>
+                </label>
+                <input type="text" 
+                    placeholder="PHS25XXXXXXXXXXXXXXXX" 
+                    class="w-full px-6 py-4 rounded-full text-[16px] border border-[#E8E8E8] bg-white focus:outline-none focus:ring-2 focus:ring-red-100 focus:border-red-500 transition-all placeholder:text-[#66666680]">
+            </div>
+
+            <div class="space-y-3">
+                <label class="block text-black font-roboto text-[20px]">
+                    FWCMS ITR Number (FWIG)<span class="text-brandRed">*</span>
+                </label>
+                <input type="text" 
+                    placeholder="PIG25XXXXXXXXXXXXXXXX" 
+                    class="w-full px-6 py-4 rounded-full text-[16px] border border-[#E8E8E8] bg-white focus:outline-none focus:ring-2 focus:ring-red-100 focus:border-red-500 transition-all placeholder:text-[#66666680]">
+            </div>
+
+            <div class="space-y-3">
+                <label class="block text-black font-roboto text-[20px]">
+                    SSM Business Reg. No./ IC. No<span class="text-brandRed">*</span>
+                </label>
+                <input type="text" 
+                    class="w-full px-6 py-4 rounded-full text-[16px] border border-[#E8E8E8] bg-white focus:outline-none focus:ring-2 focus:ring-red-100 focus:border-red-500 transition-all">
+            </div>
+
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-6">
+            <button class="bg-[#D71212] font-roboto hover:bg-red-700 text-white font-bold py-3.5 px-12 rounded-full text-lg transition duration-300 shadow-md">
+                Continue
+            </button>
+            
+            <div class="flex flex-col md:flex-row items-center gap-4">
+                <a href="#" class="text-[#0070C0] hover:underline font-roboto underline text-[20px]">
+                    Click here for Manual Purchase (without ITR)
+                </a>
+                
+                <span class="text-[#D71212] text-[12px] font-roboto text-center md:text-left leading-tight">
+                    Manual purchase strictly only for manual JIM counter submissions
+                </span>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+<section class="px-4">
+     <div class="max-w-7xl mx-auto px-4 py-10">
+      <div class="w-full mx-auto bg-white rounded-[32px] p-6 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] border border-gray-50">
+        
+        <h2 class="text-[32px] font-Montserrat text-black font-bold mb-10 tracking-tight">Update Employers Particulars</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6 mb-8">
+            <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Company/Individual Name<span class="text-brandRed">*</span></label>
+                <input type="text" placeholder="Example Sdn. Bhd" class="w-full text-[16px] px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
+            </div>
+            <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">SSM Business Reg. No. (Old)<span class="text-brandRed">*</span></label>
+                <input type="text" placeholder="123456-W" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
+            </div>
+            <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">SSM Business Reg. No. (New)<span class="text-brandRed">*</span></label>
+                <input type="text" placeholder="201901000005" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
+            </div>
+
+            <div class="md:col-span-1 space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Address<span class="text-brandRed">*</span></label>
+                <input type="text" placeholder="No.1 Jalan Example 2" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
+            </div>
+            <div class="md:col-span-1 space-y-2 pt-8">
+                <input type="text" placeholder="Address 2 (optional)" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
+            </div>
+            <div class="md:col-span-1 space-y-2 pt-8">
+                <input type="text" placeholder="Address 3 (optional)" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
+            </div>
+        </div>
+           <div class="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-6 mb-8">
+             <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Post Code<span class="text-brandRed">*</span></label>
+                <input type="text" placeholder="50450" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
+            </div>
+            <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Town<span class="text-brandRed">*</span></label>
+                <input type="text" placeholder="Kuala Lumpur" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
+            </div>
+            <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">State<span class="text-brandRed">*</span></label>
+                <select class="w-full px-6 py-4 rounded-full border border-gray-200 bg-white appearance-none focus:outline-none focus:border-red-500 text-gray-400">
+                    <option>Select a State</option>
+                </select>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Business Sector<span class="text-brandRed">*</span></label>
+                <select class="w-full px-6 py-4 rounded-full border border-gray-200 bg-white appearance-none focus:outline-none focus:border-red-500 text-gray-400">
+                    <option>Select Business Sector</option>
+                </select>
+            </div>
+           </div>
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-6 mb-8">
+            <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Email Address<span class="text-brandRed">*</span></label>
+                <input type="email" placeholder="example@gmail.com" class="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-red-500 placeholder:text-gray-300 bg-white">
+            </div>
+            <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Mobile Phone Number<span class="text-brandRed">*</span></label>
+                <input type="text" placeholder="0173541218" class="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-red-500 placeholder:text-gray-300 bg-white">
+            </div>
+            <div class="space-y-2">
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Office Number (Optional)</label>
+                <input type="text" placeholder="0173541218" class="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-red-500 placeholder:text-gray-300 bg-white">
+            </div>
+        </div>
+
+        <div class="bg-[#EFEFEF80] rounded-[24px] p-8 border border-gray-100 mt-12 relative overflow-hidden" x-data="{ open: true }">
+            <div class="flex justify-between items-center mb-8">
+                <p class="text-[#D71212]  text-[20px] font-regular leading-snug">
+                    For Individual Employers using IC Number to employ foreign worker (Not for Companies)
+                </p>
+                <button @click="open = !open" class="bg-[#e31e18] p-1.5 rounded-md text-white">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" :class="{'rotate-180': !open}"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" /></svg>
+                </button>
+            </div>
+
+            <div x-show="open" x-collapse>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                    <div class="space-y-3">
+                        <label class="block text-[16px] font-roboto text-[#2D2D2D]">IC Number</label>
+                        <div class="md:flex space-y-1 items-center gap-3">
+                            <input type="text" placeholder="880101" class="w-24 px-4 py-3 rounded-full border border-[#E8E8E8] focus:outline-none text-center text-sm">
+                            <span class="text-gray-400">-</span>
+                            <input type="text" placeholder="14" class="w-16 px-4 py-3 rounded-full border border-[#E8E8E8] focus:outline-none text-center text-sm">
+                            <span class="text-gray-400">-</span>
+                            <input type="text" placeholder="1234" class="w-20 px-4 py-3 rounded-full border border-[#E8E8E8] focus:outline-none text-center text-sm">
+                            <span class="text-[#2D2D2D] font-bold text-[16px] font-roboto">(New)</span>
+                            <input type="text" placeholder="8277962" class="w-28 px-4 py-3 rounded-full border border-[#E8E8E8] focus:outline-none text-center text-sm">
+                            <span class="text-[#2D2D2D] font-bold text-[16px] font-roboto">(Old)</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="block text-[16px] font-roboto text-[#2D2D2D]">Marital Status<span class="text-brandRed">*</span></label>
+                        <div class="flex items-center gap-8 pt-[15px]">
+                            <label class="flex items-center gap-2 cursor-pointer font-bold text-[#2D2D2D] text-[16px] font-roboto">
+                                <input type="radio" name="marital" class="w-5 h-5 accent-brandRed" checked> Single
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer font-bold text-[#2D2D2D] text-[16px] font-roboto">
+                                <input type="radio" name="marital" class="w-5 h-5 accent-brandRed"> Married
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer font-bold text-[#2D2D2D] text-[16px] font-roboto">
+                                <input type="radio" name="marital" class="w-5 h-5 accent-brandRed"> Other
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="block text-[16px] font-roboto text-[#2D2D2D]">Passport / Other Number</label>
+                        <input type="text" placeholder="A01234567" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none bg-white">
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="block text-[16px] font-roboto text-[#2D2D2D]">Date of birth</label>
+                        <div class="relative">
+                            <input type="date" placeholder="DD/MM/YYYY" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none bg-white">
+                            <!-- <svg class="w-5 h-5 absolute right-6 top-1/2 -translate-y-1/2 text-brandRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <button class="bg-[#D71212] hover:bg-red-700 text-white font-bold font-roboto py-4 px-12 rounded-full text-[20px] transition duration-300 shadow-md">
+                Press to Continue
+            </button>
+        </div>
+
+    </div>  
+    </div>
+</section>
+<section class="px-4">
+    <div class="max-w-7xl mx-auto px-4 py-10"> 
+        <div class="w-full mx-auto bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        
+        <h2 class="text-[32px] font-bold font-montserrat text-[#000000] mb-8 tracking-tight">Upload Worker Listing</h2>
+
+        <div class="mb-10">
+            <div class="flex items-center gap-2 mb-6">
+                <h3 class="text-[24px] font-bold text-black font-roboto">Select Product (Default)</h3>
+                <div class="text-brandRed cursor-pointer">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <label class="flex items-center gap-3 cursor-pointer group">
+                    <input type="radio" name="product" class="w-5 h-5 accent-brandRed border-gray-300" checked>
+                    <span class="text-[20px]  text-black font-roboto group-hover:text-brandRed transition-colors">
+                        Foreign Worker Hospitalization and Surgical Scheme (FWHS/SKHIPPA/SPIKPA)
+                    </span>
+                </label>
+                <label class="flex items-center gap-3 cursor-pointer group">
+                    <input type="radio" name="product" class="w-5 h-5 accent-brandRed border-gray-300">
+                    <span class="text-[20px]  text-black font-roboto group-hover:text-brandRed transition-colors">
+                        Foreign Worker Insurance Guarantee (FWIG)
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-[24px] font-bold text-black font-roboto mb-2">Upload Your Worker Listing</h3>
+            <p class="text-[16px] text-black font-roboto mb-6">Add your workers and grow your business network.</p>
+
+            <div class="space-y-3 text-[20px] text-black font-roboto mb-8">
+                <p>1) Please use Excel format <a href="#" class="text-brandRed underline">here</a>. If you prefer manual key in, please proceed to Worker Summary' section below.</p>
+                <p>2) After filling in the required details, click "Choose File", select your file and press "Upload Data".</p>
+                <p>3) Once the upload is successful, you can view the worker listing summary in the section below.</p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4">
+                <div class="flex items-center bg-[#f8f9f9] border border-gray-200 rounded-full px-2 py-1.5 md:min-w-[320px] justify-between relative">
+                    <input type="file" id="fileUpload" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept=".xlsx,.xls,.csv">
+                    <span class="text-[#8A898E] text-[16px] font-roboto pl-4 pointer-events-none" id="fileName">No File Chosen</span>
+                    <button class="bg-[#D71212] hover:bg-red-700 text-white font-roboto text-[16px] py-2.5 px-6 rounded-full text-sm transition shadow-md pointer-events-none">
+                        Upload Data
+                    </button>
+                </div>
+
+                <button class="bg-[#8A898E] flex items-center justify-center w-[102px] hover:bg-gray-600 text-white font-roboto py-3.5  rounded-full text-[16px] transition">
+                    Reset
+                </button>
+
+                <a href="#" class="text-[#0070C0] hover:text-blue-700 underline font-roboto text-[20px] ml-2">
+                    Click here to proceed manual key in Worker
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<section class="px-4">
+    <div class="max-w-7xl mx-auto px-4 py-10"> 
+ <div class="w-full bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        
+        <h2 class="text-[32px] font-bold font-montserrat text-black mb-8 tracking-tight">
+          Worker Details and Period of Insurance
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                <label class="text-[16px]  text-black font-roboto w-full md:w-40 leading-tight">
+                    Period of Cover<span class="text-brandRed">*</span><br>
+                    <span class="text-black font-medium">(FWHS/SPIKPA)</span>
+                </label>
+                <div class="flex items-center gap-3 flex-1">
+                    <input type="date" class="w-full px-5 py-3 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 text-black font-roboto uppercase text-sm">
+                    <span class="text-black font-roboto">-</span>
+                    <input type="text" placeholder="DD/MM/YYYY" disabled class="w-full px-5 py-3 rounded-full border border-[#E8E8E8] bg-[#E0E0E0] text-black font-roboto text-sm">
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                <label class="text-[16px]  text-black font-roboto w-full md:w-32 leading-tight">
+                    Period of Cover<span class="text-brandRed">*</span><br>
+                    <span class="text-black font-medium">(FWIG)</span>
+                </label>
+                <div class="flex items-center gap-3 flex-1">
+                    <input type="date" class="w-full px-5 py-3 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 text-black font-roboto uppercase text-sm">
+                    <span class="text-black font-roboto">-</span>
+                    <input type="text" placeholder="DD/MM/YYYY" disabled class="w-full px-5 py-3 rounded-full border border-[#E8E8E8] bg-[#E0E0E0] text-black font-roboto text-sm">
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-10">
+            <h3 class="text-[24px] font-bold text-black font-roboto mb-6">Worker Summary</h3>
+            
+           <div class="overflow-x-auto rounded-[14.55px] p-3 border border-gray-100 bg-[#F5F5F5]">
+    
+    <table class="w-full min-w-[1000px] text-left border-collapse rounded-2xl">
+        <thead>
+            <tr class="bg-white border-b border-gray-100">
+                <th class="px-6 py-4 text-[19.4px] font-bold font-roboto text-black">No.</th>
+                <th class="px-6 py-4 text-[19.4px] font-bold font-roboto text-black">Name</th>
+                <th class="px-6 py-4 text-[19.4px] font-bold font-roboto text-black">Passport No.</th>
+                <th class="px-6 py-4 text-[19.4px] font-bold font-roboto text-black">Nationality</th>
+                <th class="px-6 py-4 text-[19.4px] font-bold font-roboto text-black">DOB</th>
+                <th class="px-6 py-4 text-[19.4px] font-bold font-roboto text-black">Permit Number</th>
+                <th class="px-6 py-4 text-[19.4px] font-bold font-roboto text-black">Permit Expiry</th>
+            </tr>
+        </thead>
+        <tbody class="text-gray-400 text-sm">
+            <tr class="border-b border-[#DDDDDD] last:border-0">
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px]">1.</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">John Doe</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">A1234567</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">Bangladeshi</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px]">01/01/1990</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">P987654</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">12/12/2026</td>
+            </tr>
+             <tr class="border-b border-[#DDDDDD] last:border-0">
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px]">1.</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">John Doe</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">A1234567</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">Bangladeshi</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px]">01/01/1990</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">P987654</td>
+                <td class="px-6 py-4 font-roboto text-[#595959] text-[17.46px] capitalize">12/12/2026</td>
+            </tr>
+            </tbody>
+    </table>
+</div>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-center gap-6 mb-10">
+            <label class="text-[20px] font-roboto text-black">
+                Immigration<span class="text-brandRed">*</span>
+            </label>
+            <div class="relative w-full md:w-80">
+                <select class="w-full px-6 py-3.5 rounded-full border border-[#E8E8E8] bg-white appearance-none focus:outline-none focus:border-red-500 text-black font-roboto text-[16px]">
+                    <option>Select</option>
+                </select>
+                <div class="absolute inset-y-0 right-5 flex items-center pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <button class="bg-[#D71212] font-roboto hover:bg-red-700 text-white font-bold py-3.5 px-12 rounded-full text-[20px] transition duration-300 shadow-md">
+            Press to Continue
+        </button>
+
+    </div>
+    </div>
+   
+</section>
+
+<section class="px-4">
+    <div class="max-w-7xl mx-auto px-4 py-10"> 
+        <div class="w-full bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        
+        <h2 class="text-[32px] font-bold font-montserrat text-black mb-8 tracking-tight">Premium Summary</h2>
+
+        <div class="flex flex-col md:flex-row justify-between gap-8 mb-10 text-[15px] leading-relaxed text-gray-800">
+            <div>
+                <p class="font-bold font-roboto text-[20px] uppercase">RRC CONSTRUCTION (M) SDN BHD</p>
+                <p class="font-roboto text-[20px]">NO.1-3, JALAN 5/76B</p>
+                <p class="font-roboto text-[20px]">DESA PANDAN,</p>
+                <p class="font-roboto text-[20px]">55100 KUALA LUMPUR</p>
+            </div>
+            <div class="font-roboto text-[20px]">
+                <p><span class="font-bold ">Sector:</span> Construction</p>
+                <p><span class="font-bold">Email:</span> example@gmail.com</p>
+                <p><span class="font-bold">Contact:</span> 012-34567849, 03-70771231</p>
+            </div>
+        </div>
+
+        <p class="mb-6 font-roboto text-[20px]">Total No. of Workers: <span class="font-roboto text-[20px] text-brandRed">XXXXX</span></p>
+
+        <div class="overflow-x-auto rounded-2xl pt-3  border border-gray-100 bg-[#F5F5F5] mb-8">
+          <div class="px-3">
+              <table class="w-full min-w-[800px]  text-left border-collapse">
+                <thead>
+                    <tr class="bg-white border-b border-gray-100">
+                        <th class="px-6 py-5 text-[19.4px] font-semibold font-roboto text-black">Product</th>
+                        <th class="px-6 py-5 text-[19.4px] font-semibold font-roboto text-black">Gross Premium</th>
+                        <th class="px-6 py-5 text-[19.4px] font-semibold font-roboto text-black">TPCA Fees</th>
+                        <th class="px-6 py-5 text-[19.4px] font-semibold font-roboto text-black">Service Tax 8%</th>
+                        <th class="px-6 py-5 text-[19.4px] font-semibold font-roboto text-black">Stamp Duty</th>
+                        <th class="px-6 py-5 text-[19.4px] font-semibold font-roboto text-black">Total Amount</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-500 font-medium">
+                    <tr class="border-b border-[#DDDDDD] last:border-0">
+                        <td class="px-6 py-5 text-[#595959] text-[17.46px] font-roboto">FWHS/SPIKPA</td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                    </tr>
+                    <tr class="border-b border-[#DDDDDD] last:border-0">
+                        <td class="px-6 py-5 text-[#595959] text-[17.46px] font-roboto">IG</td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                        <td class="px-6 py-5 px-6 py-5 text-[#595959] text-[17.46px] font-roboto"></td>
+                    </tr>
+                </tbody>
+               
+            </table>
+          </div>
+            <div>
+                <div colspan="6" class="px-6 py-2 bg-[#E5E5E5] text-center font-medium text-[#000000] text-[20px] font-roboto">
+                            Grand Total Premium Need to Pay
+                        </div> 
+            </div>
+        </div>
+
+        <p class="text-[15px] font-roboto mb-8">
+            *Inclusive of 10% gross commission paid to agent (regulated by BNM): <span class="text-[#D71212] font-bold">XXXXX</span>
+        </p>
+
+        <div class="flex items-start gap-4 mb-10">
+            <div class="mt-1">
+                <input type="radio" name="declare" id="declare" class="w-5 h-5 accent-[#D71212] cursor-pointer">
+            </div>
+            <label for="declare" class="text-[15px] font-roboto mb-8 leading-relaxed cursor-pointer">
+                I/We have understood and read the declaration <a href="#" class="text-[#D71212] underline">here</a>. This is a product made available for purchase on this platform. By proceeding with the services provided by GSA Life Care (M) Sdn Bhd, the applicable commission will be charged. For similar products, you may visit any of Generali's branches to enjoy premium rebate. Generali Insurance Malaysia Berhad is a member of PIDM. The benefit(s) payable under eligible product is protected by PIDM up to limits. Please refer to PIDM's TIPS Brochure or contact Generali Insurance Malaysia Berhad or PIDM (visit <a href="https://www.pidm.gov.my" class="text-blue-600 hover:underline">www.pidm.gov.my</a>).
+            </label>
+        </div>
+
+        <button class="bg-[#D71212] hover:bg-red-700 text-white font-bold font-roboto text-[20px] py-4 px-10 rounded-full text-lg transition duration-300 shadow-md">
+            Select Payment Method
+        </button>
+
+    </div>
+    </div>
+</section>
+
+<section class="px-4">
+     <div class="max-w-7xl mx-auto px-4 py-10"> 
+        <div class="w-full mx-auto bg-white rounded-[32px] p-8 md:p-12 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)]">
+        
+        <h2 class="text-[32px] font-montserrat font-bold text-black mb-6 tracking-tight">Select Payment Method</h2>
+
+        <div class="mb-10">
+            <p class="font-bold text-[20px] font-roboto uppercase">RRC CONSTRUCTION (M) SDN BHD</p>
+            <p class="text-[20px] font-bold">Amount to Pay: <span class="font-normal">RM203.60</span></p>
+        </div>
+
+        <div class="md:flex items-center space-y-2 justify-left gap-6 mb-10" x-data="{ selected: 'visa' }">
+            
+            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[180px] h-[101px]" :class="selected === 'visa' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
+                <input type="radio" name="payment" value="visa" x-model="selected" class="hidden">
+                <img src="images/visa.svg" alt="Visa" class="h-8 mb-2">
+            </label>
+
+            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[180px] h-[101px]" :class="selected === 'fpx-personal' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
+                <input type="radio" name="payment" value="fpx-personal" x-model="selected" class="hidden">
+                <img src="images/FPXPersonal.svg" alt="FPX Personal" class="h-8 mb-2">
+            </label>
+            
+            <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer w-[180px] h-[101px]" :class="selected === 'fpx-corporate' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
+                <input type="radio" name="payment" value="fpx-corporate" x-model="selected" class="hidden">
+                <img src="images/FPXCorporatelogo.svg" alt="FPX Corporate" class="h-8 mb-2">
+            </label>
+
+        </div>
+
+        <div class="mb-10 text-[20px] leading-relaxed text-black font-roboto">
+            <p class="font-bold text-[20px] font-roboto underline mb-2">Important Note for FPX - Corporate B2B</p>
+            <p>
+                Insurance documents will be auto-emailed to your email address after Bank Checker approves the transaction. It may take up to a few hours for your bank to relay payment after confirmation. Please refer to <a href="#" class="text-brandRed underline">this FAQ</a> for further details.
+            </p>
+        </div>
+
+        <div>
+            <a href="success.html"><button class="bg-[#D71212] hover:bg-red-700 text-white font-bold font-roboto py-4 px-12 rounded-full text-[20px] transition duration-300 shadow-md">
+                Make Payment
+            </button></a>
+        </div>
+
+        <div class="flex items-center gap-3 pt-6">
+            <div class="flex items-center gap-1  px-2 py-1 rounded text-[10px] font-bold">
+                <img src="images/vs.svg" alt="">
+            </div>
+            <p class="text-[15px] text-black font-roboto">
+                This site chose Verisign SSL for secure e-commerce and confidential communications in Banking
+            </p>
+        </div>
+
+    </div>
+     </div>
+</section>
+<footer class="bg-[#F7F7F7]">
+       <div class="max-w-7xl mx-auto px-6 py-12"> 
+       
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+            
+            <div class="lg:col-span-2">
+                <div class="flex items-center gap-2">
+                    <div class="p-1.5 rounded-lg">
+                        <h3 class="font-bold font-roboto text-[24px]">Downloads</h3>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 mt-4">
+                    <a href="">
+                        <img src="images/download.svg" alt="">
+                    </a>
+                <p class="text-[#2D2D2D] lg:w-[326px] text-[12px] leading-relaxed font-roboto">
+                    Foreign Worker Hospitalisation Scheme Product Disclosure Sheet (EN)
+                </p>
+            </div>
+            <div class="flex items-center gap-2 mt-4">
+                    <a href="">
+                        <img src="images/download.svg" alt="">
+                    </a>
+                <p class="text-[#2D2D2D] lg:w-[326px] text-[12px] leading-relaxed font-roboto">
+                  Foreign Worker Hospitalisation Scheme Policy Wording
+                </p>
+            </div>
+            <div class="mt-[40px] flex gap-2.5 items-center">
+                <img src="images/s1.svg" alt="media partner">
+                <img src="images/s2.svg" alt="media partner">
+                <img src="images/s3.svg" alt="media partner">
+                <img src="images/s4.svg" alt="media partner">
+                <img src="images/s5.svg" alt="media partner">
+                <img src="images/s6.svg" alt="media partner">
+                <img src="images/s7.svg" alt="media partner">
+                <img src="images/s8.svg" alt="media partner">
+                <img src="images/s9.svg" alt="media partner">
+                <img src="images/s10.svg" alt="media partner">
+            </div>
+            </div>
+
+            <div>
+                <h3 class="font-medium font-roboto text-[20px] text-black mb-6">Self Help</h3>
+                <ul class="space-y-4 text-gray-500 text-sm">
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Home</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Why Us</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Claims</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">FAQ</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Tutorial</a></li>
+                    <li><a href="#" class="hover:text-brandRed text-[16px] text-[#737373] font-roboto">Quick Quote</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-medium font-roboto text-[20px] text-black mb-6">Payments</h3>
+                <div class="grid grid-cols-2 gap-2 max-w-[180px]">
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/FPXPersonal.svg" alt="FPX" class="h-full">
+                    </div>
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/FPXCorporatelogo.svg" alt="FPX" class="h-full">
+                    </div>
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/visa.svg" alt="Visa" class="h-full">
+                    </div>
+                    <div class="border rounded p-2 bg-white flex justify-center h-10 shadow-sm">
+                        <img src="images/versing.svg" alt="Verisign" class="h-full">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="font-medium font-roboto text-[20px] text-black mb-6">Contact Us</h3>
+                <ul class="space-y-4 text-sm text-gray-600">
+                    <li class="flex items-center gap-3">
+                        <img src="images/Mail.svg" alt="mail">
+                        <span class="text-[#666666] text-[16px] font-roboto">hello@einsuransmy.com</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="images/Phonecall.svg" alt="phone">
+                        <span class="text-[#666666] text-[16px] font-roboto">011 562 16906, 011 1608 6906</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <img src="images/Clock.svg" alt="clock">
+                        <span class="text-[#666666] text-[16px] font-roboto">Mon-Sun 9am-6pm</span>
+                    </li>
+                </ul>
+               <button class="w-[170px] mt-8 h-[50px] bg-[#34B658] text-white rounded-[30px] px-[10px] py-[6px] flex items-center justify-center gap-2 shadow-[0px_0px_15px_0px_rgba(0,0,0,0.1)] hover:bg-[#2ea04d] transition duration-300">
+                       <img class="w-[24.17px] h-[24.17px]" src="images/whatsapp.svg" alt="whatsapp.svg">
+                       <span class="font-roboto font-bold text-[16px] leading-none tracking-normal">WhatsApp Us</span>
+                    </button>
+            </div>
+        </div>
+
+        <div class="border-t text-center border-[#0000001A] mt-16 pt-8 space-y-2 md:row items-center gap-6">
+            <p class="text-[#666666]  text-[16px] font-roboto">
+              The site is owned and managed by Financial Link Sdn Bhd. Copyright 2026 Financial Link Sdn Bhd
+            </p>
+            
+        </div>
+
+    </footer>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById('fileUpload').addEventListener('change', function(e) {
+        const fileName = e.target.files[0] ? e.target.files[0].name : 'No File Chosen';
+        document.getElementById('fileName').textContent = fileName;
+    });
+</script>
