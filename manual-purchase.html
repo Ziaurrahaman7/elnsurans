@@ -139,7 +139,7 @@
                         
                         <div>
                             <p class="font-semibold border-b border-gray-600 pb-1 mb-1 text-[14px] font-roboto">Company/Individual Name</p>
-                            <p><span class="font-semibold text-[14px] font-roboto">Company:</span> Please insert name of your sdn Bhd, Partnership or Sole Proprietor</p>
+                            <p><span class="font-semibold text-[14px] font-roboto">Company:</span> Please insert name of your <span class="capitalise">Sdn Bhd</span>, Partnership or Sole Proprietor.</p>
                         </div>
 
                         <p><span class="font-semibold text-[14px] font-roboto">Individual:</span> If using personal name (no SSM), please insert your full name as per IC.</p>
@@ -181,7 +181,7 @@
                             
                             <div>
                                 <p class="font-semibold border-b border-gray-200 pb-1 mb-2 font-roboto">Company/Individual Name</p>
-                                <p><span class="font-semibold font-roboto">Company:</span> Please insert name of your sdn Bhd, Partnership or Sole Proprietor</p>
+                                <p><span class="font-semibold font-roboto">Company:</span> Please insert name of your <span class="capitalise">Sdn Bhd</span>, Partnership or Sole Proprietor.</p>
                             </div>
 
                             <p><span class="font-semibold font-roboto">Individual:</span> If using personal name (no SSM), please insert your full name as per IC.</p>
@@ -290,11 +290,11 @@
         </div>
            <div class="grid grid-cols-1 md:grid-cols-4 gap-x-4 gap-y-3 mb-4">
              <div class="space-y-2">
-                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Post Code<span class="text-brandRed">*</span></label>
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Postcode<span class="text-brandRed">*</span></label>
                 <input type="text" placeholder="50450" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
             </div>
             <div class="space-y-2">
-                <label class="block text-[16px] font-roboto text-[#2D2D2D]">Town<span class="text-brandRed">*</span></label>
+                <label class="block text-[16px] font-roboto text-[#2D2D2D]">City<span class="text-brandRed">*</span></label>
                 <input type="text" placeholder="Kuala Lumpur" class="w-full px-6 py-4 rounded-full border border-[#E8E8E8] focus:outline-none focus:border-red-500 placeholder:text-[#ABABAB] bg-white">
             </div>
             <div class="space-y-2">
@@ -412,7 +412,7 @@
                 <label class="flex items-center gap-3 cursor-pointer group">
                     <input type="radio" name="product" class="w-5 h-5 accent-brandRed border-gray-300" checked>
                     <span class="text-[20px]  text-black font-roboto group-hover:text-brandRed transition-colors">
-                        Foreign Worker Hospitalization and Surgical Scheme (FWHS/SKHIPPA/SPIKPA)
+                        Foreign Worker Hospitalisation and Surgical Scheme (FWHS/SKHIPPA/SPIKPA)
                     </span>
                 </label>
                 <label class="flex items-center gap-3 cursor-pointer group">
@@ -626,7 +626,7 @@
             <div class="mt-1">
                 <input type="radio" name="declare" id="declare" class="w-5 h-5 accent-[#D71212] cursor-pointer">
             </div>
-            <label for="declare" class="text-[15px] font-roboto mb-0 leading-relaxed cursor-pointer">
+            <label for="declare" class="text-[15px] text-justify font-roboto mb-0 leading-relaxed cursor-pointer">
                 I/We have understood and read the declaration <a href="#" class="text-[#D71212] underline">here</a>. This is a product made available for purchase on this platform. By proceeding with the services provided by GSA Life Care (M) Sdn Bhd, the applicable commission will be charged. For similar products, you may visit any of Generali's branches to enjoy premium rebate. Generali Insurance Malaysia Berhad is a member of PIDM. The benefit(s) payable under eligible product is protected by PIDM up to limits. Please refer to PIDM's TIPS Brochure or contact Generali Insurance Malaysia Berhad or PIDM (visit <a href="https://www.pidm.gov.my" class="text-blue-600 hover:underline">www.pidm.gov.my</a>).
             </label>
         </div>
@@ -654,17 +654,17 @@
             
             <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer md:w-[189px] md:h-[101px]" :class="selected === 'visa' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
                 <input type="radio" name="payment" value="visa" x-model="selected" class="hidden">
-                <img src="images/visa.svg" alt="Visa" class="h-8 mb-2">
+                <img src="images/visa.svg" alt="Visa" class="w-[103px] h-[48px] mb-2">
             </label>
 
             <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer md:w-[189px] md:h-[101px]" :class="selected === 'fpx-personal' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
                 <input type="radio" name="payment" value="fpx-personal" x-model="selected" class="hidden">
-                <img src="images/FPXPersonal.svg" alt="FPX Personal" class="h-8 mb-2">
+                <img src="images/FPXPersonal.svg" alt="FPX Personal" class="w-[103px] h-[48px] mb-2">
             </label>
             
             <label class="border border-gray-100 rounded-[20px] p-6 flex flex-col items-center justify-center bg-white shadow-[0px_2px_15px_0px_#00000014] transition cursor-pointer md:w-[189px] md:h-[101px]" :class="selected === 'fpx-corporate' ? 'border-red-500 bg-red-50' : 'hover:border-red-500'">
                 <input type="radio" name="payment" value="fpx-corporate" x-model="selected" class="hidden">
-                <img src="images/FPXCorporatelogo.svg" alt="FPX Corporate" class="h-8 mb-2">
+                <img src="images/FPXCorporatelogo.svg" alt="FPX Corporate" class="w-[103px] h-[48px] mb-2">
             </label>
 
         </div>
